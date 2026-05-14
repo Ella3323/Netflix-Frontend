@@ -4,9 +4,12 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install --legacy-peer-deps
-
-RUN npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/free-brands-svg-icons --legacy-peer-deps
+RUN npm install --legacy-peer-deps && \
+    npm install @fortawesome/fontawesome-svg-core \
+    @fortawesome/free-solid-svg-icons \
+    @fortawesome/free-brands-svg-icons \
+    @fortawesome/react-fontawesome \
+    --legacy-peer-deps
 
 COPY . .
 
